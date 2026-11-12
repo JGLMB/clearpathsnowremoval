@@ -1,1 +1,514 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ClearPath Snow Removal | Driveways, Walkways & Roofs</title>
+  <meta
+    name="description"
+    content="Reliable residential snow removal for driveways, walkways, steps, and roofs."
+  >
+
+  <style>
+    :root {
+      --navy: #09233f;
+      --blue: #1479c9;
+      --light-blue: #eaf6ff;
+      --white: #ffffff;
+      --text: #183247;
+      --gray: #617383;
+      --green: #16835b;
+      --shadow: 0 12px 30px rgba(7, 35, 63, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #f8fcff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      color: var(--white);
+      background: rgba(9, 35, 63, 0.96);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #78c9ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 640px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(rgba(5, 27, 50, 0.75), rgba(7, 56, 94, 0.76)),
+        url("[images.unsplash.com](https://images.unsplash.com/photo-1483664852095-d6cc6870702d?auto=format&fit=crop&w=1800&q=80)")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.12);
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0 auto 18px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: 1.18rem;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 2px solid var(--blue);
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--blue);
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .button-secondary {
+      border-color: var(--white);
+      background: transparent;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-title {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--gray);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      margin-bottom: 12px;
+      font-size: 2.5rem;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--gray);
+    }
+
+    .why-us {
+      background: var(--light-blue);
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 30px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .check {
+      padding: 18px;
+      border-radius: 10px;
+      background: var(--white);
+      box-shadow: 0 6px 18px rgba(7, 35, 63, 0.08);
+      font-weight: 700;
+    }
+
+    .check::before {
+      content: "✓";
+      margin-right: 10px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .quote-section {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .quote-wrap h2 {
+      margin-top: 0;
+      font-size: 2.5rem;
+      line-height: 1.15;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      padding: 30px;
+      border-radius: 14px;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #b9c9d6;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    form .button {
+      width: 100%;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      margin: 0;
+      color: var(--gray);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    footer {
+      padding: 32px 0;
+      color: #c9d8e4;
+      background: #06192b;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 780px) {
+      .nav-links a:not(.button) {
+        display: none;
+      }
+
+      .grid,
+      .checks,
+      .quote-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">ClearPath <span>Snow Removal</span></a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a class="button" href="#quote">Free Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content container">
+        <span class="eyebrow">Fast, reliable winter service</span>
+
+        <h1>We clear the snow so you don't have to.</h1>
+
+        <p>
+          Dependable snow removal for driveways, walkways, steps, and roofs.
+          Serving homeowners throughout Bessemer And Nearby Areas.
+        </p>
+
+        <div class="button-row">
+          <a class="button" href="#quote">Request a Free Quote</a>
+          <a class="button button-secondary" href="tel:+15555555555">
+            Call (906)364-3677
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Snow Removal Services</h2>
+          <p>
+            One-time cleanup and recurring service options for your property.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon">🚗</div>
+            <h3>Driveway Clearing</h3>
+            <p>
+              We clear snow from residential driveways and entrances so you
+              can safely get in and out.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🥾</div>
+            <h3>Walkways and Steps</h3>
+            <p>
+              We shovel sidewalks, paths, porches, and steps and can apply
+              ice melt when requested.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Roof Snow Removal</h3>
+            <p>
+              Snow is carefully removed from accessible roof areas to reduce
+              excess buildup and help prevent ice dams.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose ClearPath?</h2>
+          <p>
+            Local service focused on safety, communication, and dependable work.
+          </p>
+        </div>
+
+        <div class="checks">
+          <div class="check">Fast response after snowfall</div>
+          <div class="check">Free estimates with clear pricing</div>
+          <div class="check">One-time and seasonal service</div>
+          <div class="check">Careful, respectful property service</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote">
+      <div class="container quote-wrap">
+        <div>
+          <h2>Get your free snow-removal quote.</h2>
+          <p>
+            Tell us what you need cleared and where the property is located.
+            We will contact you with pricing and availability.
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:9063643677">(906)364-3677</a>
+          </p>
+
+          <p>
+            <strong>Email:</strong>
+            <a href="clearpathsnow6@gmail.com">
+             clearpathsnow6@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <form id="quoteForm">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+
+          <div>
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" required>
+          </div>
+
+          <div>
+            <label for="address">Property address</label>
+            <input id="address" name="address" type="text" required>
+          </div>
+
+          <div>
+            <label for="service">Service needed</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Driveway clearing</option>
+              <option>Walkways and steps</option>
+              <option>Roof snow removal</option>
+              <option>Complete property package</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="details">Property details</label>
+            <textarea
+              id="details"
+              name="details"
+              placeholder="Describe the driveway, walkways, roof, and snow depth."
+            ></textarea>
+          </div>
+
+          <button class="button" type="submit">Request My Quote</button>
+
+          <p class="form-note">
+            This form opens your email app with the customer's information.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>ClearPath Snow Removal</strong></p>
+      <p>Serving Bessemer And Nearby Areas</p>
+      <p>&copy; <span id="year"></span> ClearPath Snow Removal</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("quoteForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const service = document.getElementById("service").value;
+      const details = document.getElementById("details").value;
+
+      const subject = encodeURIComponent("Snow removal quote request");
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Address: ${address}\n` +
+        `Service: ${service}\n\n` +
+        `Details:\n${details}`
+      );
+
+      window.location.href =
+        `mailto:quotes@clearpathsnow.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
